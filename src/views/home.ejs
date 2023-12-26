@@ -1,0 +1,38 @@
+<%- include('layout/header');%>
+<%- include('layout/navBar');%>
+
+<div class="container-fluid mt-5 mb-5">
+  
+<div class="row gap-3 d-flex align-items-center justify-content-center">
+  
+    <% if (cars.length > 0) {%>
+        <div class="col-12">
+            <p class="fs-1 text-center"><%= vagasAtuais %> vagas disponíveis</p>
+        </div>
+        <% cars.forEach(car => {%>
+            <div class="card shadow border-light" style="width: 18rem;">
+                <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Placa do carro:</h6>
+                <h5 class="card-title"><%= car.placaCarro %></h5>
+                <h6 class="card-subtitle mt-2 mb-2 text-body-secondary">Horário de entrada:</h6>
+                <h5 class="card-title"><%= car.entradaTime %></h5>
+                <div class="d-flex justify-content-center mt-3 pe-3">
+                  <a  href="/pagamento/<%= car.placaCarro%>" class="btn btn-success" role="button" aria-disabled="true"> 
+                    Pagar
+                  </a>
+                </div>
+                </div>
+            </div>
+        <% }); %>
+        
+    <% }else{%>
+    <div class="row">
+        <div class="col-12">
+            <p class="fs-1 text-center">Estacionamento vazio.</p>
+        </div>
+    </div>
+    <% }%>
+</div>
+</div>
+
+<%- include('layout/footer');%>

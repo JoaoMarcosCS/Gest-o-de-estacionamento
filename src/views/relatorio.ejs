@@ -1,0 +1,14 @@
+<%- include('layout/header');%>
+<%- include('layout/navBar');%>
+
+<h1 class="text-center">Gráfico Comparativo</h1>
+  <canvas id="myChart" width="400" height="400"></canvas>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var chartConfig = <%- JSON.stringify(chartConfig) %>;
+      var myChart = new Chart(ctx, chartConfig);
+    });
+  </script>
+
+<%- include('layout/footer');%>

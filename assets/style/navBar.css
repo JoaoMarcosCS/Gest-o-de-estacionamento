@@ -1,0 +1,8 @@
+.itemMenu{
+    font-weight: 800;
+    transition: all ease 1s;
+}
+
+.itemMenu:hover{
+    transform: scale(1.1);
+}

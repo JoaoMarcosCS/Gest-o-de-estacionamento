@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Easy Park</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav d-flex justify-content-end w-100 pe-lg-5 gap-lg-3">
+          <li class="nav-item">
+            <a class="nav-link active fs-5 itemMenu" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-5 itemMenu" href="/cadastrar" data-bs-toggle="modal" 
+            data-bs-target="#exampleModal" aria-current="page">Cadastrar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-5 itemMenu" aria-current="page" href="/tabela">Relatório diário</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-5 itemMenu" aria-current="page" href="/relatorio">Relatório entrada e saida</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar veículo</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/cadastrar/register" method="POST">
+            <div class="mb-3">
+              <label for="placaCarro" class="form-labe text-body-secondaryl">Placa do carro:</label>
+              <input type="text" min="6" max="6" required class="form-control" name="placaCarro" id="placaCarro" aria-describedby="emailHelp">
+              <div class="row ">
+                <div class="col-12 d-flex mt-3 flex-row justify-content-center gap-5">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-success">Cadastrar</button>
+                </div>
+              </div>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
